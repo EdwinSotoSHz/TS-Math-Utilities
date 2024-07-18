@@ -1,0 +1,337 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    background: #eee8ff;
+    min-height: 100vh;
+    color: black;
+    font-family: "Roboto";
+    text-align: center;
+    font-size: 1.15em;
+    padding: 9% 12%;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+#effectBackground{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: -2;
+    user-select: none;
+    background: transparent;
+}
+.particlesBody{
+    position: absolute;
+    background: transparent;
+    animation: fall ease 8s infinite;
+    bottom: -20vh;
+    opacity: 0.7;
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-180vh) rotate(0deg);
+    }
+    25% {
+        transform:  rotate(90deg);
+    }
+    50% {
+        transform: translateY(-60vh) rotate(45deg);
+    }
+    75% {
+        transform:  rotate(90deg);
+    }
+    100% {
+        transform: translateY(60vh) rotate(180deg);
+    }
+}
+.bubble{
+    transition: 0.8s;
+}
+#ath{
+    position: fixed;
+    bottom: 0%;
+    right: 2%;
+}
+#ath::before {
+    font-weight: bolder;
+    color: rgb(97, 0, 145);
+    content: 'Author: Edwin Soto';
+    font-size: 0.8em;
+    animation: animA 2s ease-in infinite alternate;
+}
+@keyframes animA {
+    0% {opacity: 0.7;}
+    100% {opacity: 0;}
+}
+i{
+    font-size: 1.15em;
+    font-weight: 500;
+    font-family: 'STIX Two Math', sans-serif;
+}
+.path-1{
+    animation:pathAnim-1 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes pathAnim-1{
+    0%{
+        d: path("M 0,400 L 0,233 C 59.343589743589746,226.40512820512822 118.68717948717949,219.81025641025641 212,221 C 305.3128205128205,222.18974358974359 432.5948717948718,231.1641025641026 511,239 C 589.4051282051282,246.8358974358974 618.9333333333333,253.5333333333333 688,242 C 757.0666666666667,230.4666666666667 865.6717948717951,200.7025641025641 961,201 C 1056.328205128205,201.2974358974359 1138.3794871794871,231.65641025641025 1216,242 C 1293.6205128205129,252.34358974358975 1366.8102564102564,242.67179487179487 1440,233 L 1440,400 L 0,400 Z");
+    }
+    25%{
+        d: path("M 0,400 L 0,233 C 70.32051282051285,237.80769230769232 140.6410256410257,242.6153846153846 216,233 C 291.3589743589743,223.3846153846154 371.75641025641016,199.34615384615384 461,194 C 550.2435897435898,188.65384615384616 648.3333333333334,201.99999999999997 718,210 C 787.6666666666666,218.00000000000003 828.9102564102562,220.6538461538462 917,226 C 1005.0897435897438,231.3461538461538 1140.025641025641,239.38461538461536 1235,241 C 1329.974358974359,242.61538461538464 1384.9871794871794,237.80769230769232 1440,233 L 1440,400 L 0,400 Z");
+    }
+    50%{
+        d: path("M 0,400 L 0,233 C 72.00769230769234,243.76666666666668 144.01538461538468,254.53333333333336 232,259 C 319.9846153846153,263.46666666666664 423.9461538461537,261.6333333333333 504,268 C 584.0538461538463,274.3666666666667 640.2,288.9333333333334 713,270 C 785.8,251.06666666666663 875.2538461538463,198.63333333333335 955,195 C 1034.7461538461537,191.36666666666665 1104.7846153846153,236.53333333333336 1184,251 C 1263.2153846153847,265.46666666666664 1351.6076923076923,249.23333333333332 1440,233 L 1440,400 L 0,400 Z");
+    }
+    75%{
+        d: path("M 0,400 L 0,233 C 77.57179487179488,224.54615384615386 155.14358974358976,216.0923076923077 228,232 C 300.85641025641024,247.9076923076923 368.99743589743593,288.17692307692306 452,278 C 535.0025641025641,267.82307692307694 632.8666666666667,207.20000000000002 712,195 C 791.1333333333333,182.79999999999998 851.5358974358973,219.02307692307696 932,233 C 1012.4641025641027,246.97692307692304 1112.9897435897437,238.7076923076923 1201,235 C 1289.0102564102563,231.2923076923077 1364.5051282051281,232.14615384615385 1440,233 L 1440,400 L 0,400 Z");
+    }
+    100%{
+        d: path("M 0,400 L 0,233 C 59.343589743589746,226.40512820512822 118.68717948717949,219.81025641025641 212,221 C 305.3128205128205,222.18974358974359 432.5948717948718,231.1641025641026 511,239 C 589.4051282051282,246.8358974358974 618.9333333333333,253.5333333333333 688,242 C 757.0666666666667,230.4666666666667 865.6717948717951,200.7025641025641 961,201 C 1056.328205128205,201.2974358974359 1138.3794871794871,231.65641025641025 1216,242 C 1293.6205128205129,252.34358974358975 1366.8102564102564,242.67179487179487 1440,233 L 1440,400 L 0,400 Z");
+    }
+}
+.path-0{
+    animation:pathAnim-0 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+@keyframes pathAnim-0{
+    0%{
+        d: path("M 0,400 L 0,100 C 59.27692307692308,124.22820512820513 118.55384615384617,148.45641025641027 212,147 C 305.44615384615383,145.54358974358973 433.06153846153836,118.40256410256411 520,117 C 606.9384615384616,115.59743589743589 653.2,139.9333333333333 713,139 C 772.8,138.0666666666667 846.1384615384616,111.86410256410257 940,108 C 1033.8615384615384,104.13589743589743 1148.246153846154,122.61025641025641 1235,125 C 1321.753846153846,127.38974358974359 1380.876923076923,113.6948717948718 1440,100 L 1440,400 L 0,400 Z");
+    }
+    25%{
+        d: path("M 0,400 L 0,100 C 70.55897435897435,74.86153846153846 141.1179487179487,49.723076923076924 220,50 C 298.8820512820513,50.276923076923076 386.0871794871796,75.96923076923076 467,100 C 547.9128205128204,124.03076923076924 622.5333333333333,146.39999999999998 716,134 C 809.4666666666667,121.60000000000001 921.7794871794872,74.43076923076924 996,61 C 1070.2205128205128,47.56923076923076 1106.3487179487179,67.87692307692306 1174,80 C 1241.6512820512821,92.12307692307694 1340.825641025641,96.06153846153848 1440,100 L 1440,400 L 0,400 Z");
+    }
+    50%{
+        d: path("M 0,400 L 0,100 C 68.78974358974361,114.66666666666666 137.57948717948722,129.33333333333331 218,135 C 298.4205128205128,140.66666666666669 390.4717948717948,137.33333333333334 475,134 C 559.5282051282052,130.66666666666666 636.5333333333333,127.33333333333333 711,115 C 785.4666666666667,102.66666666666667 857.394871794872,81.33333333333333 944,75 C 1030.605128205128,68.66666666666667 1131.8871794871795,77.33333333333334 1217,84 C 1302.1128205128205,90.66666666666666 1371.0564102564103,95.33333333333333 1440,100 L 1440,400 L 0,400 Z");
+    }
+    75%{
+        d: path("M 0,400 L 0,100 C 96.87692307692308,81.3820512820513 193.75384615384615,62.76410256410257 266,66 C 338.24615384615385,69.23589743589743 385.86153846153843,94.32564102564102 449,104 C 512.1384615384616,113.67435897435898 590.8000000000001,107.93333333333332 677,108 C 763.1999999999999,108.06666666666668 856.9384615384615,113.94102564102565 952,123 C 1047.0615384615385,132.05897435897435 1143.4461538461537,144.3025641025641 1225,141 C 1306.5538461538463,137.6974358974359 1373.2769230769231,118.84871794871795 1440,100 L 1440,400 L 0,400 Z");
+    }
+    100%{
+        d: path("M 0,400 L 0,100 C 59.27692307692308,124.22820512820513 118.55384615384617,148.45641025641027 212,147 C 305.44615384615383,145.54358974358973 433.06153846153836,118.40256410256411 520,117 C 606.9384615384616,115.59743589743589 653.2,139.9333333333333 713,139 C 772.8,138.0666666666667 846.1384615384616,111.86410256410257 940,108 C 1033.8615384615384,104.13589743589743 1148.246153846154,122.61025641025641 1235,125 C 1321.753846153846,127.38974358974359 1380.876923076923,113.6948717948718 1440,100 L 1440,400 L 0,400 Z");
+    }
+}
+#svg{
+    position: absolute;
+    left: 0%;
+    top: -35%;
+    z-index: -1;
+}
+#title{
+    background-color: #9789ff;
+    width: 60%;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 30px;
+}
+#info{
+    margin-top: 20px;
+    padding: 40px 30px;
+    border-radius: 30px;
+    border: double rgb(0, 0, 0) 5px;
+    background: rgba(206, 208, 255, 0.6);
+    text-align: center;
+    overflow: hidden;
+}
+#content{
+    margin-top: 20px;
+    padding: 20px 30px;
+    padding: 40px 30px;
+    border-radius: 30px;
+    border: double rgb(0, 0, 0) 5px;
+    background: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    transition: 1s;
+    overflow: hidden;
+}
+.steps{
+    display: flex;
+    margin-bottom: 25px;
+}
+.step, .math{
+    width: 44%;
+    padding: 30px 30px;
+    border-radius: 30px;
+    border: solid rgb(0, 0, 0) 3px;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    transition: 1s;
+    overflow: hidden;
+    position: relative;
+}
+.math{
+    width: 44%;
+    padding: 40px 30px;
+}
+.step{
+    margin-right: auto;
+}
+ul{
+    text-align: left;
+}
+.math-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    height: 100%;
+}
+.step-size{
+    width: 100%;
+    text-align: right;
+}
+.data{
+    width: 40%;
+    text-align: left;
+}
+#mcd{
+    margin: auto;
+}
+.math-content div{
+    margin: auto;
+}
+mn{
+    font-size: 1em;
+}
+.single-step{
+    border-radius: 20px;
+    border: double rgb(0, 0, 0) 5px;
+    background: rgba(206, 208, 255, 0.6);
+    display: flex;
+    margin-bottom: 25px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+}
+.single-step div{
+    font-weight: 700;
+    margin: auto;
+}
+#equivalence-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+#equivalence-table th, #equivalence-table td {
+    border: 1px solid #ccc;
+    padding: 2px;
+    text-align: center;
+}
+
+#enc-optional{
+    overflow: hidden;
+    transition: 1s;
+}
+#mathM, #mathC{
+    margin: 10% auto;
+}
+
+.toggleCheckbox {
+    display: none;
+}
+.toggleLabel {
+    display: inline-block;
+    width: 55px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition-duration: 1s;
+    margin-bottom: -0.35em;
+    margin-left: 8px;
+}
+.toggleLabel:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    background: white;
+    transition: left 0.3s ease-in-out;
+}
+#toggleBtn:checked + .toggleLabel {
+    background-color: rgb(0, 255, 0);
+}
+#toggleBtn:checked + .toggleLabel:after {
+    left: 25px;
+    background: white;
+    transition-duration: 0.3s;
+}
+#startData *{
+    display: inline-block !important;
+    margin-right: 10px;
+}
+
+button {
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    border: 2px solid #9789ff;
+    border-radius: 30px;
+    background-color: #9789ff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:active{
+    animation: squezzeAnimation 0.7s;
+    transform-origin: center;
+}
+@keyframes squezzeAnimation {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scaleX(1.2) scaleY(1.15);
+    }
+    20% {
+        transform: scaleX(0.8) scaleY(1.2);
+    }
+    30% {
+        transform: scaleX(1.1) scaleY(1.15);
+    }
+    40% {
+        transform: scaleX(0.9) scaleY(1.17);
+    }
+    50% {
+        transform: scaleX(1.05) scaleY(1.1);
+    }
+    60% {
+        transform: scaleX(0.95) scaleY(1.12);
+    }
+    70% {
+        transform: scaleX(1.03) scaleY(1.07);
+    }
+    80% {
+        transform: scaleX(0.98) scaleY(1.1);
+    }
+    90% {
+        transform: scaleX(1.02) scaleY(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+input {
+    width: 60%;
+    padding: 0px 10px;
+    border: 2px solid #9789ff;
+    border-radius: 30px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #555; /* Color de borde cuando está enfocado */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Oculta las flechas en WebKit */
+  appearance: none; /* Oculta las flechas en WebKit */
+}
