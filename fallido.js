@@ -22,7 +22,7 @@ function addSquare() {
             y: y,
             rotation: rotation,
             speed: speed
-        });
+        }); 
     }
 }
 function drawSquare() {
