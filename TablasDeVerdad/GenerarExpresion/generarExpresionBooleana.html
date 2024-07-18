@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresion Booleana</title>
+    <meta author="Edwin Soto">
+    <meta description="Calculadora para generar la expresion booleana a partir de las salidas de una tabla de verdad">
+    <link rel="stylesheet" href="">
+    <style>
+        .notSimbol {
+          text-decoration: overline;
+        }
+        #nBits{
+            text-decoration: none;
+        }
+      </style>
+</head>
+<body>
+  <!-- https://www.allaboutcircuits.com/textbook/digital/chpt-7/converting-truth-tables-boolean-expressions/#:~:text=Sum%2DOf%2DProducts%2C%20or%20SOP%2C%20Boolean%20expressions%20may,truth%20table%20as%20a%20whole. -->
+    <h1>Generar expresión booleana</h1>
+    <p>Número de Bits de la tabla: </p>
+    <input type="number" id="numberBits"/>
+    <p>Ingresa las salidas que son 1 (1-<u id="nBits">1</u>) </p>
+    <input type="text" id="outputsZero"/>
+    <button id="calculate">Calcular</button>
+    <table id="trutTable"></table>
+    <p id="expresion"></p>
+
+<script src="generarExpresionBooleana.js"></script>
+</body>
+</html>

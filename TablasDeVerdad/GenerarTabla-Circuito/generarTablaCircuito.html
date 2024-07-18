@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar tabla de verdad</title>
+    <meta author="Edwin Soto">
+    <meta description="Calculadora para generar una tabla de verdad a partir de una expresion booleana">
+    <link rel="stylesheet" href="">
+    <style>
+        .notSimbol {
+          text-decoration: overline;
+        }
+        #nBits{
+            text-decoration: none;
+        }
+      </style>
+</head>
+<body>
+    <h1>Generar tabla de verdad</h1>
+    <label id="info">Expresión Booleana</label>
+    <input type="checkbox" id="toggleBtn">
+    <p>Ingrese la expresión booleana: 
+       <br>
+       <b style="font-size: small;">*Nota: No funciona con expresiones con 3 parentesis anidados (((expresion)))</b>
+    </p>
+    
+    <input type="text" id="txtExpression" value="(p∨¬q∧r∧¬s)⇒(¬r∨¬s)"/>
+    <button id="calculate">Calcular</button>
+    <table id="trutTable"></table>
+
+<script src="generarTablaCircuito.js"></script>
+</body>
+</html>

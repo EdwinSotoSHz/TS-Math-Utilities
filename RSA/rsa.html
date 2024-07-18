@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptación RSA</title>
+    <meta author="Edwin Soto">
+    <meta description="Encriptacion rsa">
+    <link rel="stylesheet" href="styileRSA.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/stix-two-math" rel="stylesheet">
+</head>
+<body>
+    <div id="effectBackground"></div>
+    <script src="particles.js"></script>
+    <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
+        <path d="M 0,400 L 0,100 C 59.27692307692308,124.22820512820513 118.55384615384617,148.45641025641027 212,147 C 305.44615384615383,145.54358974358973 433.06153846153836,118.40256410256411 520,117 C 606.9384615384616,115.59743589743589 653.2,139.9333333333333 713,139 C 772.8,138.0666666666667 846.1384615384616,111.86410256410257 940,108 C 1033.8615384615384,104.13589743589743 1148.246153846154,122.61025641025641 1235,125 C 1321.753846153846,127.38974358974359 1380.876923076923,113.6948717948718 1440,100 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#9789ff" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path>
+        <path d="M 0,400 L 0,233 C 59.343589743589746,226.40512820512822 118.68717948717949,219.81025641025641 212,221 C 305.3128205128205,222.18974358974359 432.5948717948718,231.1641025641026 511,239 C 589.4051282051282,246.8358974358974 618.9333333333333,253.5333333333333 688,242 C 757.0666666666667,230.4666666666667 865.6717948717951,200.7025641025641 961,201 C 1056.328205128205,201.2974358974359 1138.3794871794871,231.65641025641025 1216,242 C 1293.6205128205129,252.34358974358975 1366.8102564102564,242.67179487179487 1440,233 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#9789ff" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 200)"></path>
+    </svg>
+    <div id="title">
+        <h1>Encriptación RSA</h1>
+    </div>
+    <div id="info">
+        La encriptación RSA es una poderosa herramienta de seguridad utilizada en la criptografía moderna para proteger la confidencialidad de datos sensibles. Esta técnica se basa en conceptos matemáticos relacionados con la teoría de números y ofrece un método robusto para la encriptación asimétrica, donde se utilizan dos claves diferentes: una clave pública y una clave privada.
+    </div>
+
+    <div id="content">
+        <h2>Obtención de llave pública y privada</h3>
+        <div class="steps">
+            <div class="step">
+                <div class="backgroundMS"></div>
+                <h3>Números Primos y Cálculo de Parámetros</h3>
+                <ul>
+                    <li>
+                        Selecciona Dos Números Primos <i>p</i> y <i>q</i>
+                    </li>
+                    <li>
+                        Calcula el Producto <i>n = p × q</i>
+                    </li>
+                    <li>
+                        Calcula Phi de Euler <i>φ(n) = (p-1)(q-1)</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="math">
+                <div class="math-content">
+                    <label class="step-size"><i>p = </i></label><input class="data" id="txtP" type="number">
+                    <label class="step-size"><i>q = </i></label><input class="data" id="txtQ" type="number">
+                    <label class="step-size"><i>n = </i></label><label class="data lblN">0</label>
+                    <label class="step-size"><i>φ(n) = </i></label><label class="data lblPHIE">0</label>
+                </div>
+                <button id="btnCalcular">Continuar</button>
+            </div>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <h3>Selección de la Clave Pública</h3>
+                <ul>
+                    <li>
+                        El exponente de encriptación se denomina como <i>e</i>
+                    </li>
+                    <li>
+                        El exponente <i>e</i> es coprimo de <i>φ(n)</i>
+                    </li>
+                    <li>
+                        El exponente <i>e</i> es inferior a <i>φ(n)</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="math">
+                <div class="math-content">
+                    <table id="mcd">
+                        <tr>
+                            <th colspan="2">MCD(φ(n), e) = 1</th>
+                        </tr>
+                        <tr>
+                            <th>φ(n)</th>
+                            <th>e</th>
+                        </tr>
+                    </table>
+                    <div>
+                        <label class="step-size"><i>e = </i></label><label class="data lblE">0</label>
+                        <br>
+                        <label>Llave Pública: (<label class="data lblN">0</label>, <label class="data lblE">0</label>)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <h3>Cálculo de la Clave Privada</h3>
+                <ul>
+                    <li>
+                        El exponente de desencriptación se denomina como <i>d</i>
+                    </li>
+                    <li>
+                        <i>d ∈ ℤ<sup> +</sup></i> 
+                    </li>
+                    <li>
+                        El producto de <i>d</i> y <i>e</i> dejar un residuo de 1 cuando se divide por <i>φ(n)</i>
+                    </li>
+                    <li>
+                        Expresión Alternativa:
+                        <math>
+                            <mi>d</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1 + k × φ(n)</mn>
+                                <mn>e</mn>
+                            </mfrac>
+                        </math>
+                    </li>
+                    <li>
+                        <i>1 ≤ k ≤ φ(n)</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="math">
+                <div class="math-content">
+                    <div>
+                        <math id="mathD">
+                            <mi>d</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mn>1 + k × φ(n)</mn>
+                                <mn>e</mn>
+                            </mfrac>
+                        </math>
+                    </div>
+                    
+                    <div>
+                        <label class="step-size"><i>d = </i></label><label class="data lblD">0</label>
+                        <br>
+                        <label>Llave Privada: (<label class="data lblN">0</label>, <label class="data lblD">0</label>)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-step">
+            <div>KPB(<label class="data lblN">0</label>, <label class="data lblE">0</label>)</div>
+            <div>KPV(<label class="data lblN">0</label>, <label class="data lblD">0</label>)</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div id="content">
+        <h2>Encriptación del mensaje</h3>
+        <div class="single-step">
+            <div><label class="step-size"><i>n = </i></label><label class="data lblN">0</label></div>
+            <div><label class="step-size"><i>e = </i></label><label class="data lblE">0</label></div>
+            <div><label class="step-size"><i>d = </i></label><label class="data lblD">0</label></div>
+            <div><label class="step-size"><i>M = </i></label><input class="data" type="text" id="txtM"></div>
+            <div>
+                <label id="mode">Texto</label>
+                <input type="checkbox" id="toggleBtn" class="toggleCheckbox">
+                <label for="toggleBtn" class="toggleLabel"></label>
+            </div>
+        </div>
+        <button id="btnEncrypt" disabled="true">Cifrar mensaje</button>
+
+        <div class="steps" id="enc-optional">
+            <div class="step">
+                <h3>Convertir Cadena a Números</h3>
+                <ul>
+                    <li>
+                        Asignamos a cada carácter de la cadena de texto un valor numérico
+                    </li>
+                </ul>
+                <table id="equivalence-table">
+                    <tr>
+                        <th>A</th> <th>B</th> <th>C</th> <th>D</th> <th>E</th> <th>F</th> <th>G</th> <th>H</th> <th>I</th> <th>J</th> <th>K</th> <th>L</th> <th>M</th>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+                    </tr>
+                    <tr>
+                        <th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th>
+                    </tr>
+                    <tr>
+                        <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="math">
+                <div style="margin: 10% auto;">
+                    Mensaje original:
+                    <br>
+                    <label id="lblMO">aaa aaaa</label>
+                    <br><br>
+                    Equivalencia:
+                    <br>
+                    <label id="lblME">000 0000</label>
+                </div>
+            </div>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <h3>Cifrado utilizando la Clave Pública</h3>
+                <ul>
+                    <li>
+                        La clave publica se representa por <i>(n, e)</i>
+                    </li>
+                    <li>
+                        Para cifrar el mensaje representado por el número entero <i>M</i> aplicamos la siguiente fórmula: <br>
+                        <i>C = M<sup>e</sup> Mod(n)</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="math">
+                <div id="mathC">
+                    <i>C = M<sup>e</sup> Mod(n)</i><br>                    
+                </div>
+            </div>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <h3>Cifrado utilizando la Clave Privada</h3>
+                <ul>
+                    <li>
+                        La clave publica se representa por <i>(n, d)</i>
+                    </li>
+                    <li>
+                        Para obtener el mensaje original <i>M</i> aplicamos la siguiente fórmula: <br>
+                        <i>M = C<sup>d</sup> Mod(n)</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="math">
+                <div id="mathM">
+                    <i>M = C<sup>d</sup> Mod(n)</i><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="encriptation.js"></script>
+</body>
+</html>

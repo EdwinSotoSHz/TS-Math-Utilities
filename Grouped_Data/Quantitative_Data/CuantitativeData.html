@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="csvInput">Ingresa valores separados por comas:</label><br>
+    <input type="checkbox" id="type" value="false"/>
+    <input type="text" id="inputData" name="inputData"/><br><br>
+    <input type="number" id="numClass" name="numClass" disabled/><br><br>
+    <button id="btnData">Obtener Valores</button>
+    <input type="checkbox" disabled id="checkOrder" value="false"/>
+    <input type="checkbox" disabled id="checkWay" value="false"/>
+    <div id="tableContainer"></div>
+
+    <div id="charts"></div>
+    <script src="../DisplayData.js"></script>
+    <script src="CuantitativeDiscreteData.js"></script>
+    <script src="CuantitativeContinuosData.js"></script>
+    <script src="CuantitativeData.js"></script>
+</body>
+</html>

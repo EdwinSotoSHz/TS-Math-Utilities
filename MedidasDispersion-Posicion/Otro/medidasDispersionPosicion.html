@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media-mediana-moda</title>
+    <meta author="Edwin Soto">
+    <meta description="Calculadora de medidas de dispersión, la Desviación media, Desviación típica o estándar y varianza de un conjunto de datos, Los datos agrupados se especifican en Intervalos asociados a una frecuencia, puedes calcular medidas de posición (Cuartiles, deciles y Percentiles)">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>Medidas de dispersión o variación y posición</h1>
+
+    <div id="startData">
+        <label class="textBlue">Clases (i):</label><input class="generalInput inputBlue" type="number" id="classes"> 
+        <button class="buttons" id="start">Empezar</button>
+    </div>
+    
+    <div id="inputData">
+        <label class="textBlue" style="margin-right: 10px;">Número de Datos (n ó <math><mo style="font-size: 1.3em;">Σ</mo><mi>f</mi></math>):</label>
+        <input class="generalInput inputBlue" type="number" id="nD"/>
+        <br>
+        <label class="textRed">Intervalo nominal/exacto</label>
+        <input type="checkbox" id="toggleBtnTypeInterval" class="toggleCheckbox">
+        <label for="toggleBtnTypeInterval" class="toggleLabel"></label>
+        <table id="inputDataTable">
+            <tr>
+                <th>Li</th>
+                <th>Ls</th>
+                <th>f</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="medidasPosicion">
+        <label class="textRed">Cuartiles, deciles y Percentiles</label>
+        <input type="checkbox" id="toggleBtn" class="toggleCheckbox">
+        <label for="toggleBtn" class="toggleLabel"></label>
+        <label>Primero introdusca la cantidad a calcular y despues el numero (k)</label>
+        <table id="tableCDP">
+            <tr>
+                <th>Cuartiles</th>
+                <th>Deciles</th>
+                <th>Percentiles</th>
+            </tr>
+            <tr>
+                <td><input class="generalInput classSupp" type="number" id="Cuartiles" disabled value="0"></td>
+                <td><input class="generalInput classSupp" type="number" id="Deciles" disabled value="0"></td>
+                <td><input class="generalInput classSupp" type="number" id="Percentiles" disabled value="0"></td>
+            </tr>
+        </table>
+        <br>
+        <button class="buttonsR" id="CDPcreate">Empezar </button>
+    </div>
+
+    <button class="buttonsB" id="calculate">Calcular</button>
+
+    <div id="finalOutput">
+        <label id="X">X̅ =
+            <math>
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mo>Σ</mo>
+                            <mo>(</mo>
+                            <mi>x</mi>
+                            <mo>*</mo>
+                            <mi>f</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mrow>
+                            <mi>n</mi>
+                        </mrow>
+                    </mfrac>
+                </mrow>
+            </math>
+        </label>
+        <br><br>
+        <label id="DM">DM = 
+            <math>
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mo>Σ</mo>
+                            <mi>f</mi>
+                            <mi>i</mi>
+                            <mo>|</mo>
+                            <mi>x</mi>
+                            <mo>-</mo>
+                            <mi>x̄</mi>
+                            <mo>|</mo>
+                        </mrow>
+                        <mrow>
+                            <mi>n</mi>
+                        </mrow>
+                    </mfrac>
+                </mrow>
+            </math>
+        </label>
+        <br><br>
+        <label id="S">S² = 
+            <math>
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mo>Σ</mo>
+                            <mi>f</mi>
+                            <mi>i</mi>
+                            <mo>(</mo>
+                            <mo>|</mo>
+                            <mi>x</mi>
+                            <mo>-</mo>
+                            <mi>x̄</mi>
+                            <mo>|</mo>
+                            <mo>)</mo>
+                            <mn>²</mn>
+                        </mrow>
+                        <mrow>
+                            <mi>n</mi>
+                        </mrow>
+                    </mfrac>
+                </mrow>
+            </math>
+        </label>
+        <br><br>
+        <label id="S2">S = 
+            <math>
+                <mrow>
+                    <msqrt>
+                        <mfrac>
+                            <mrow>
+                                <mo>Σ</mo>
+                                <mi>f</mi>
+                                <mi>i</mi>
+                                <mo>(</mo>
+                                <mo>|</mo>
+                                <mi>x</mi>
+                                <mo>-</mo>
+                                <mi>x̄</mi>
+                                <mo>|</mo>
+                                <mo>)</mo>
+                                <mn>²</mn>
+                            </mrow>
+                            <mrow>
+                                <mi>n</mi>
+                            </mrow>
+                        </mfrac>
+                    </msqrt>
+                </mrow>
+            </math>
+        </label>
+    </div>
+
+    <div id="outputDataTableDiv">
+        <table id="outputDataTable">
+            <tr>
+                <th>Li</th>
+                <th>Ls</th>
+                <th>f</th>
+                <th>F</th>
+                <th>Mc</th>
+                <th>x*f</th>
+                <th>∣Xi-X̅∣</th>
+                <th>f*(∣Xi-X̅∣)</th>
+                <th>(∣Xi-X̅∣)²</th>
+                <th>f * (∣Xi-X̅∣)²</th>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="CDPdiv"></div>
+</body>
+<script src="medidasDispersionPosicion.js"></script>
+</html>
